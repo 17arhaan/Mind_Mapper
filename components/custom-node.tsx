@@ -3,6 +3,19 @@
 import { memo, useRef } from "react"
 import { Handle, Position, type NodeProps } from "reactflow"
 
+// Function to format text with bold sections
+const formatText = (text: string) => {
+  // Split the text by bold markers
+  const parts = text.split(/\*\*/)
+  return parts.map((part, index) => {
+    // Even indices are normal text, odd indices are bold
+    if (index % 2 === 1) {
+      return <strong key={index} className="font-semibold">{part}</strong>
+    }
+    return <span key={index}>{part}</span>
+  })
+}
+
 export const CustomNode = memo(({ data, id, isConnectable }: NodeProps) => {
   const { label, details, isMain, type } = data
   const nodeRef = useRef<HTMLDivElement>(null)
@@ -47,10 +60,10 @@ export const CustomNode = memo(({ data, id, isConnectable }: NodeProps) => {
       <Handle type="target" position={Position.Top} isConnectable={isConnectable} className="!bg-beige/70" />
 
       <div className="text-center">
-        <div className="font-medium">{label}</div>
+        <div className="font-medium">{formatText(label)}</div>
 
         <div className="details-container hidden mt-2 text-xs opacity-90 text-left border-t border-beige/20 pt-1 max-h-[200px] overflow-y-auto">
-          {details || `Information about ${label}`}
+          {formatText(details || `Information about ${label}`)}
         </div>
 
         {details && !isMain && (
