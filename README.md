@@ -1,7 +1,5 @@
 # MindMapper: Interactive Mind Map Generator
 
----
-
 ## Overview
 
 MindMapper is an AI-powered tool that transforms any prompt into an interactive, visually appealing mind map. Built with Next.js and React Flow, it provides an intuitive interface for exploring complex topics through connected concepts.
