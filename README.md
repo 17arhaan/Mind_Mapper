@@ -1,4 +1,3 @@
-# MindMapper: Interactive Mind Map Generator
 
 ## Overview
 
