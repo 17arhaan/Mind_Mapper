@@ -1,4 +1,6 @@
-### MindMapper: Interactive Mind Map Generator
+# MindMapper: Interactive Mind Map Generator
+
+---
 
 ## Overview
 
